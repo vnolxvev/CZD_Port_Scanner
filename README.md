@@ -1,7 +1,4 @@
-#   ___   ____  ___      ___               _       ___                                       
-#  / __| |_  / |   \    | _ \  ___   _ _  | |_    / __|  __   __ _   _ _    _ _    ___   _ _ 
-# | (__   / /  | |) |   |  _/ / _ \ | '_| |  _|   \__ \ / _| / _` | | ' \  | ' \  / -_) | '_|
-#  \___| /___| |___/    |_|   \___/ |_|    \__|   |___/ \__| \__,_| |_||_| |_||_| \___| |_|  
+# CZD PORT SCANNER
 
 A modular, multithreaded Python 3 port scanner built by David Osisek. It supports TCP Connect, TCP SYN (stealth), and UDP scans using raw sockets and Scapy. Designed for internal reconnaissance, firewall validation, and security audits.
 
