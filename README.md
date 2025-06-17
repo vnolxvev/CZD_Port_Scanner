@@ -36,20 +36,20 @@ pip3 install scapy
 
 SYN and UDP scanning use raw sockets and require root privileges. Always run this tool with sudo:
 
-sudo python3 Osisek_Port_Scanner.py ...
+sudo python3 CZD_Port_Scanner.py ...
 
 
 ## - File Setup
 
 Clone or download this repository and ensure the main script is saved as:
 
-Osisek_Port_Scanner.py
+CZD_Port_Scanner.py
 
 ## - Usage
 
 Basic Syntax
 
-sudo python3 Osisek_Port_Scanner.py --target <ip_or_hostname> --ports <port_list> --scan <tcp|syn|udp>
+sudo python3 CZD_Port_Scanner.py --target <ip_or_hostname> --ports <port_list> --scan <tcp|syn|udp>
 
 
 
@@ -57,15 +57,15 @@ Examples
 
 TCP Connect Scan
 
-sudo python3 Osisek_Port_Scanner.py --target 192.168.1.1 --ports 22,80,443 --scan tcp
+sudo python3 CZD_Port_Scanner.py --target 192.168.1.1 --ports 22,80,443 --scan tcp
 
 SYN Stealth Scan
 
-sudo python3 Osisek_Port_Scanner.py --target 192.168.1.1 --ports 1-1024 --scan syn
+sudo python3 CZD_Port_Scanner.py --target 192.168.1.1 --ports 1-1024 --scan syn
 
 UDP Scan
 
-sudo python3 Osisek_Port_Scanner.py --target 192.168.1.1 --ports 53,123,161,500 --scan udp
+sudo python3 CZD_Port_Scanner.py --target 192.168.1.1 --ports 53,123,161,500 --scan udp
 
 
 
@@ -98,7 +98,7 @@ Author
 David Osisek
 MIT IT SECURITY, BS Software Dev and Analysis
 
-Osisek_Port_Scanner.py is part of a cybersecurity utility suite developed as a showcase of hands-on expertise in Python and network enumeration.
+CZD_Port_Scanner.py is part of a cybersecurity utility suite developed as a showcase of hands-on expertise in Python and network enumeration.
 
 
 
