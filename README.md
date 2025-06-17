@@ -105,9 +105,13 @@ Osisek_Port_Scanner.py is part of a cybersecurity utility suite developed as a s
 📁 Repo Structure
 
 /CZD_Port_Scanner
-├── Osisek_Port_Scanner.py
+
+├── Port_Scanner.py
+
 ├── README.md
+
 ├── port_scanner.log  (auto-generated after scan)
+
 └── /docs              (optional for future documentation)
 
 
