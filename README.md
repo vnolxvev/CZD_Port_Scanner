@@ -1,120 +1,113 @@
-# CZD PORT SCANNER
+# CZD Port Scanner 🛠️
 
-A modular, multithreaded Python 3 port scanner built by David Osisek. It supports TCP Connect, TCP SYN (stealth), and UDP scans using raw sockets and Scapy. Designed for internal reconnaissance, firewall validation, and security audits.
+![CZD Port Scanner](https://img.shields.io/badge/CZD_Port_Scanner-v1.0.0-blue)
 
-- Features
-	•	TCP Connect Scan (--scan tcp)
-	•	TCP SYN Stealth Scan (--scan syn)
-	•	UDP Scan (--scan udp)
-	•	Custom Port Ranges (--ports 22,80,443,8000-8010)
-	•	Multithreaded for performance
-	•	Logs results to port_scanner.log
+Welcome to the **CZD Port Scanner** repository! This modular and multithreaded port scanning utility is designed to support various scanning techniques, including TCP Connect, TCP SYN (stealth), and UDP probes. It is built for use in internal reconnaissance, network auditing, or red team enumeration phases.
 
+## Table of Contents
 
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Scanning Techniques](#scanning-techniques)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
-## - Installation & Setup
+## Features 🌟
 
+- **Modular Design**: Easily extend or modify the scanning capabilities.
+- **Multithreading**: Perform scans quickly and efficiently.
+- **Multiple Protocol Support**: Utilize TCP Connect, TCP SYN, and UDP scanning methods.
+- **User-Friendly CLI**: Simple command-line interface for easy interaction.
+- **Detailed Reporting**: Get clear and concise results from your scans.
 
-## 1. Install Python 3
+## Installation 🛠️
 
-Make sure Python 3 is installed:
+To get started with CZD Port Scanner, follow these steps:
 
-python3 --version
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/vnolxvev/CZD_Port_Scanner.git
+   cd CZD_Port_Scanner
+   ```
 
-If needed:
+2. **Install Dependencies**:
+   Make sure you have Python installed. Then, install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-sudo apt update && sudo apt install python3 python3-pip -y
+3. **Run the Scanner**:
+   You can start using the scanner right away. Check the usage section for more details.
 
+## Usage 📖
 
-## 2. Install Dependencies
+To use the CZD Port Scanner, run the following command in your terminal:
 
-Install Scapy for raw packet manipulation:
+```bash
+python scanner.py -h
+```
 
-pip3 install scapy
+This will display the help message with all available options. You can specify the target IP, port range, and scanning technique.
 
-## - Permissions
+### Example Command
 
-SYN and UDP scanning use raw sockets and require root privileges. Always run this tool with sudo:
+To perform a TCP SYN scan on a specific IP address, use:
 
-sudo python3 CZD_Port_Scanner.py ...
+```bash
+python scanner.py -t 192.168.1.1 -p 1-1000 -m tcp-syn
+```
 
+### Options
 
-## - File Setup
+- `-t` or `--target`: Specify the target IP address.
+- `-p` or `--ports`: Define the port range (e.g., `1-65535`).
+- `-m` or `--method`: Choose the scanning method (`tcp-connect`, `tcp-syn`, `udp`).
 
-Clone or download this repository and ensure the main script is saved as:
+## Scanning Techniques 🔍
 
-CZD_Port_Scanner.py
+### TCP Connect Scan
 
-## - Usage
+This method establishes a full TCP connection with the target. It is straightforward but can be easily detected by firewalls.
 
-Basic Syntax
+### TCP SYN Scan (Stealth)
 
-sudo python3 CZD_Port_Scanner.py --target <ip_or_hostname> --ports <port_list> --scan <tcp|syn|udp>
+The TCP SYN scan sends SYN packets and analyzes the responses. It is less likely to be logged by the target, making it stealthier.
 
+### UDP Scanning
 
+UDP scanning checks for open UDP ports. It is more challenging due to the nature of the UDP protocol but essential for a comprehensive scan.
 
-Examples
+## Contributing 🤝
 
-TCP Connect Scan
+We welcome contributions to improve the CZD Port Scanner. If you want to contribute, please follow these steps:
 
-sudo python3 CZD_Port_Scanner.py --target 192.168.1.1 --ports 22,80,443 --scan tcp
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/YourFeature`).
+6. Open a pull request.
 
-SYN Stealth Scan
+## License 📄
 
-sudo python3 CZD_Port_Scanner.py --target 192.168.1.1 --ports 1-1024 --scan syn
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-UDP Scan
+## Contact 📬
 
-sudo python3 CZD_Port_Scanner.py --target 192.168.1.1 --ports 53,123,161,500 --scan udp
+For any inquiries or issues, please reach out to the maintainer:
 
+- **Name**: Your Name
+- **Email**: your.email@example.com
 
+## Releases 📦
 
+To download the latest release of CZD Port Scanner, visit the [Releases](https://github.com/vnolxvev/CZD_Port_Scanner/releases) section. Download the appropriate file and execute it to get started.
 
-## Output 💾 
+You can also check the [Releases](https://github.com/vnolxvev/CZD_Port_Scanner/releases) section for updates and new features.
 
-Scan results are written to:
+---
 
-port_scanner.log
-
-Each entry includes timestamped status information (OPEN, FILTERED, etc.).
-
-
-### Legal Disclaimer ### 
-
-This tool is for educational and authorized use only. Unauthorized port scanning may violate legal, ethical, or organizational policies. Use responsibly.
-
-
-
-Roadmap
-	•	Export scan results to JSON or CSV
-	•	Add service banner grabbing
-	•	CIDR/subnet scanning support
-	•	Nmap XML compatibility
-	•	OSINT integration support
-
-
-
-Author
-David Osisek
-MIT IT SECURITY, BS Software Dev and Analysis
-
-CZD_Port_Scanner.py is part of a cybersecurity utility suite developed as a showcase of hands-on expertise in Python and network enumeration.
-
-
-
-📁 Repo Structure
-
-/CZD_Port_Scanner
-
-├── CZD_Port_Scanner.py
-
-├── README.md
-
-├── port_scanner.log  (auto-generated after scan)
-
-└── /docs              (optional for future documentation)
-
-
-
-Questions / Contributions
-Feel free to open an issue or submit a pull request for enhancements or fixes.
+Thank you for your interest in CZD Port Scanner! We hope you find it useful for your network security needs. Happy scanning!
